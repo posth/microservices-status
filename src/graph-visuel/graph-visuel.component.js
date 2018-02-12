@@ -1,46 +1,12 @@
 import React, { Component } from 'react';
 
 import { Graph } from 'react-d3-graph';
-
-// graph payload (with minimalist structure)
-const data = {
-    nodes: [
-      {id: 'Front-Web'},
-      {id: 'Service Sondage'},
-      {id: 'Service Eligibilite'},
-      {id: 'Service Renouvellement'},
-      {id: 'PISE Service Elgibilite'},
-      {id: 'PISE Infopret'},
-      {id: 'PISE InfoPersonne'},
-      {id: 'Assurance Pret (Infocal)'},
-      {id: 'Alice', color: 'red'},
-      {id: 'AccesD Publique'}
-    ],
-    links: [
-        {source: 'Front-Web', target: 'Service Sondage'},
-        {source: 'Front-Web', target: 'Service Eligibilite'},
-    ]
-};
-
-// the graph configuration, you only need to pass down properties
-// that you want to override, otherwise default ones will be used
-const myConfig = {
-    height: 500,
-    automaticRearrangeAfterDropNode: true,
-    nodeHighlightBehavior: true,
-    node: {
-        color: 'lightgreen',
-        size: 500,
-        highlightStrokeColor: 'blue'
-    },
-    link: {
-        highlightColor: 'lightblue'
-    }
-};
+import { myConfig } from './config.graph';
+import { data } from './microservice.data';
 
 // graph event callbacks
 const onClickNode = function(nodeId) {
-    window.alert('Clicked node ${nodeId}');
+    window.alert(`Service: ${nodeId}`);
 };
 
 const onMouseOverNode = function(nodeId) {
@@ -52,7 +18,7 @@ const onMouseOutNode = function(nodeId) {
 };
 
 const onClickLink = function(source, target) {
-    window.alert(`Clicked link between ${source} and ${target}`);
+    //window.alert(`Clicked link between ${source} and ${target}`);
 };
 
 const onMouseOverLink = function(source, target) {
