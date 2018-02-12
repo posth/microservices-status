@@ -3,7 +3,8 @@ export const data = {
     nodes: [
       {
           id: 'Front-Web', 
-          size: 1000
+          size: 1000,
+          color: 'green'
          },
       {id: 'Service Sondage'},
       {id: 'Service Eligibilite'},
@@ -19,6 +20,7 @@ export const data = {
         {source: 'Front-Web', target: 'Service Sondage'},
         {source: 'Front-Web', target: 'Service Eligibilite'},
         {source: 'Front-Web', target: 'Service Renouvellement'},
+        {source: 'Front-Web', target: 'AccesD Publique'},
         {source: 'Service Renouvellement', target: 'PISE Service Elgibilite'},
         {source: 'Service Renouvellement', target: 'PISE Infopret'},
         {source: 'Service Renouvellement', target: 'PISE InfoPersonne'},

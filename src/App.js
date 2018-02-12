@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import GraphVisuel from './graph-visuel/graph-visuel.component';
+import GraphVisuel from './graph-visuel/graph-visuel.container';
 
 class App extends Component {
   render() {
