@@ -13,7 +13,7 @@ const data = {
       {id: 'PISE Infopret'},
       {id: 'PISE InfoPersonne'},
       {id: 'Assurance Pret (Infocal)'},
-      {id: 'Alice'},
+      {id: 'Alice', color: 'red'},
       {id: 'AccesD Publique'}
     ],
     links: [
@@ -25,10 +25,12 @@ const data = {
 // the graph configuration, you only need to pass down properties
 // that you want to override, otherwise default ones will be used
 const myConfig = {
+    height: 500,
+    automaticRearrangeAfterDropNode: true,
     nodeHighlightBehavior: true,
     node: {
         color: 'lightgreen',
-        size: 120,
+        size: 500,
         highlightStrokeColor: 'blue'
     },
     link: {
