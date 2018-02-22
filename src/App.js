@@ -1,21 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
+import GraphVisuelContainer from './graph-visuel/graph-visuel.container';
+
 import './App.css';
 
-import GraphVisuel from './graph-visuel/graph-visuel.container';
-
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Renouvellement Hypothecaire - Microservices visualisation</h1>
-        </header>
-        <p className="App-intro">
-          <GraphVisuel />
-        </p>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <GraphVisuelContainer />
+  </div>
+)
 
 export default App;
