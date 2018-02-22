@@ -9,4 +9,4 @@ const GraphVisuel = ({microservices, config}) => (
     />
 );
 
-export default GraphVisuel;
+export default GraphVisuel; 
