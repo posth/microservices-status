@@ -17,8 +17,12 @@
 }
 
 svg {
+  height: 600px!important;
+}
+
+section {
+  display: inline-block;
   border: 1px solid rgba(55, 55, 55, .3);
-  height: 100vh!important;
-  width: 100vw!important;
+  margin: 10px;
 }
 
