@@ -1,34 +1,49 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
-import GraphVisuel from './graph-visuel/components/graph-visuel.component';
-import { FormMicroservicesContainer } from './graph-visuel/containers/form-microservices.container';
+import { Graph } from 'react-d3-graph';
+import { config } from './config.data';
 
 import './App.css';
 
-const mapStateToProps = state => {
-  return {
-    microservices: state.microservices,
-    config: state.config
-  }
-}
-
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      microservices: {}
+    }
+  }
+
+  componentDidMount() {
+    fetch(`http://localhost:3004/initialState`)
+      .then(result => result.json())
+      .then(microservices => {
+        this.setState({ microservices });
+      })
+  }
+
+  // To conditionally render the component on REST response
+  isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+  }
+
   render() {
     return (
       <div>
+        {this.isEmpty(this.state.microservices) && (
+          <p>Chargement</p>
+        )}
         <section>
-          <GraphVisuel
-            microservices={this.props.microservices}
-            config={this.props.config}
-          />
-        </section>
-        <section>
-          <FormMicroservicesContainer />
+          {!this.isEmpty(this.state.microservices) && (
+            <Graph
+              id='microservices-graph'
+              data={this.state.microservices}
+              config={config}
+            />
+          )}
         </section>
       </div>
     )
   }
 }
-
-export default connect(mapStateToProps)(App);
+export default App;
