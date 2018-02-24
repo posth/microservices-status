@@ -1,13 +1,18 @@
 export const config = {
-    "height": 400,
-    "automaticRearrangeAfterDropNode": true,
+    "height": 500,
+    "automaticRearrangeAfterDropNode": false,
     "nodeHighlightBehavior": true,
+    "highlightOpacity": .5,
     "node": {
         "color": "lightgreen",
-        "size": 500,
-        "highlightStrokeColor": "blue"
+        "size": 1000,
+        "highlightStrokeColor": "blue",
+        "fontSize": 12,
+        "highlightFontSize": 12,
+        "highlightFontWeight": 'bold',
+        "labelProperty": "name"
     },
     "link": {
-        "highlightColor": "lightblue"
+        "highlightColor": "blue"
     }
 }

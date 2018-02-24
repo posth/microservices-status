@@ -1,28 +1,45 @@
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #222;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-svg {
-  height: 600px!important;
-}
-
 section {
   display: inline-block;
-  /* border: 1px solid rgba(55, 55, 55, .3); */
+  border: 1px solid rgba(55, 55, 55, .3);
   margin: 10px;
 }
 
+.flex-grid {
+  display: flex;
+}
+
+.graph {
+  width: 60vw;
+}
+
+.node-information {
+  width: 30vw;
+  padding: 10px;
+  word-wrap: break-word;
+  background-color: aliceblue;
+}
+
+button {
+  margin: 10px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+article {
+  background-color: lightyellow;
+  height: 450px;
+  padding: 10px;
+  overflow-y: auto;
+  border: 1px solid rgba(55, 55, 55, .3);
+}
+  
+article p span:first-child {
+  text-decoration: underline;
+}
+
+article p span:nth-child(2) {
+  text-decoration: none;
+  word-wrap: break-word;
+}
