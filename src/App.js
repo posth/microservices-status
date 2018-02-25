@@ -38,6 +38,7 @@ class App extends Component {
   }
 
   setMicroserviceHttpStatusColor(microservices) {
+
     let coloredNodes = microservices.nodes.map((node) => {
       switch (node.httpStatus) {
         case '200':
@@ -50,6 +51,14 @@ class App extends Component {
           node.color = 'orange';
           break;
       }
+
+      // Configure microservice node size based on links.source frequency
+      const source = node.id;
+      const size = microservices.links.reduce((n, node) => {
+        return n + (node.source === source)
+      }, 0);
+      node.size = size === 0 ? 600 : size * 600;
+
       return node;
     });
 

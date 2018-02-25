@@ -5,7 +5,6 @@ export const config = {
     "highlightOpacity": .5,
     "node": {
         "color": "lightgreen",
-        "size": 1000,
         "highlightStrokeColor": "blue",
         "fontSize": 12,
         "highlightFontSize": 12,
