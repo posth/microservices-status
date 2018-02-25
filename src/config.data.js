@@ -1,5 +1,5 @@
 export const config = {
-    "height": 500,
+    "height": 600,
     "automaticRearrangeAfterDropNode": false,
     "nodeHighlightBehavior": true,
     "highlightOpacity": .5,

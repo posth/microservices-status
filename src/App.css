@@ -20,11 +20,15 @@ section {
 }
 
 button {
-  margin: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: lightgrey;
+  border: 1px solid rgba(55, 55, 55, .3);
 }
 
 button:hover {
   cursor: pointer;
+  opacity: .8;
 }
 
 article {

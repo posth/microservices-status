@@ -21,20 +21,47 @@ class App extends Component {
   }
 
   getMicroservicesData() {
+
+    // Hack - not clean, how to update state without having to reset it?
+    this.setState({
+      microservices: {},
+      selectedNode: {}
+    });
+
     fetch(`http://localhost:3004/initialState`)
       .then(result => result.json())
       .then(microservices => {
-        this.setState({ microservices });
+        this.setState({
+          microservices: this.setMicroserviceHttpStatusColor(microservices)
+        });
       });
   }
 
-  // To conditionally render the component on REST response
+  setMicroserviceHttpStatusColor(microservices) {
+    let coloredNodes = microservices.nodes.map((node) => {
+      switch (node.httpStatus) {
+        case '200':
+          node.color = 'lightgreen';
+          break;
+        case '404':
+          node.color = 'red';
+          break;
+        default:
+          node.color = 'orange';
+          break;
+      }
+      return node;
+    });
+
+    microservices.nodes = coloredNodes;
+    return microservices;
+  }
+
   isEmpty(obj) {
     return Object.keys(obj).length === 0;
   }
 
   onClickNode = (nodeId) => {
-
     let currentNode = this.state.microservices.nodes.find((node) => {
       return nodeId === node.id
     });
@@ -63,7 +90,7 @@ class App extends Component {
         <section className="node-information">
           <h2>Microservice (Node) Information: </h2>
           <MicroserviceInfo selectedNode={this.state.selectedNode} />
-          <button>Update status</button>
+          <button onClick={() => { this.getMicroservicesData() }}>Update microservice status</button>
         </section>
       </div>
     )
