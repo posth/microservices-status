@@ -19,6 +19,12 @@ section {
   background-color: aliceblue;
 }
 
+h3 {
+  text-align: left;
+  margin-left: 10px;
+  font-weight: normal;
+}
+
 button {
   margin-top: 10px;
   padding: 10px;
