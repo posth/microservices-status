@@ -34,6 +34,9 @@ class App extends Component {
         this.setState({
           microservices: this.setMicroserviceHttpStatusColor(microservices)
         });
+      })
+      .catch((error) => {
+        console.error(`Error fetch microservices: ${error}`);
       });
   }
 
@@ -57,7 +60,7 @@ class App extends Component {
       const size = microservices.links.reduce((n, node) => {
         return n + (node.source === source)
       }, 0);
-      node.size = size === 0 ? 600 : size * 600;
+      node.size = size === 0 ? 300 : size * 400;
 
       return node;
     });
